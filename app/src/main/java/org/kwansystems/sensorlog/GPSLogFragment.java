@@ -118,7 +118,7 @@ public class GPSLogFragment extends Fragment implements NmeaListener,LocationLis
             String ts=sdf.format(new Date(timestamp));
             txtSystemClock[i].setText(ts);
         }
-        sibling.onNmeaReceived(timestamp, NMEA);
+        if(sibling!=null)sibling.onNmeaReceived(timestamp, NMEA);
     }
 
     @Override

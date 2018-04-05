@@ -46,6 +46,7 @@ public class SensorLogService extends Service implements NmeaListener, LocationL
         acc = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         bfld = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
         gyro = mSensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
+        ornt = mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
         pres = mSensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE);
         Intent notificationIntent = new Intent(this, MainActivity.class);
         PendingIntent pendingIntent =
@@ -147,6 +148,12 @@ public class SensorLogService extends Service implements NmeaListener, LocationL
     Date nmeaStartTime=null,sensorStartTime=null;
 
     /** method for clients */
+    public void mark(String s) {
+        String ts = sdf.format(new Date());
+        if(oufNMEA!=null) oufNMEA.println(ts + "$PKWNE,"+s+"*");
+        if(oufSensor!=null) oufSensor.println(","+ts+",\""+s+"\"");
+    }
+
     public void openNMEA() {
         if(oufNMEA==null) try {
             Toast.makeText(this, "openNMEA", Toast.LENGTH_SHORT).show();
@@ -167,7 +174,7 @@ public class SensorLogService extends Service implements NmeaListener, LocationL
     }
 
     private SensorManager mSensorManager;
-    private Sensor acc, bfld, gyro, pres;
+    private Sensor acc, bfld, gyro, pres, ornt;
 
     public void openSensor() {
         if(oufSensor==null) try {
@@ -176,6 +183,7 @@ public class SensorLogService extends Service implements NmeaListener, LocationL
             mSensorManager.registerListener(this, bfld, SensorManager.SENSOR_DELAY_FASTEST);
             mSensorManager.registerListener(this, gyro, SensorManager.SENSOR_DELAY_FASTEST);
             mSensorManager.registerListener(this, pres, SensorManager.SENSOR_DELAY_FASTEST);
+            mSensorManager.registerListener(this, ornt, SensorManager.SENSOR_DELAY_FASTEST);
             oufSensor = new PrintWriter(new FileWriter(Environment.getExternalStorageDirectory().getPath()+ "/SensorLogs/Sensor"+sdf2.format(new Date()) + ".csv"));
             sensorStartTime=new Date();
         } catch (IOException e) {
@@ -211,6 +219,7 @@ public class SensorLogService extends Service implements NmeaListener, LocationL
             oufSensor.printf("%d,%s,%d",arg0.timestamp, sdf.format(new Date()), arg0.sensor.getType());
             for(double v:arg0.values) oufSensor.printf(",%f", v);
             oufSensor.println();
+            showNotification();
         }
     }
 }

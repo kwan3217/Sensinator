@@ -163,7 +163,6 @@ public class MainActivity extends AppCompatActivity {
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
         String pageTitle[];
         Fragment fragment[];
-//        BubbleCompassFragment bcf=new BubbleCompassFragment();
         GPSPlotFragment gpf=new GPSPlotFragment();
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -171,10 +170,10 @@ public class MainActivity extends AppCompatActivity {
                     getString(R.string.title_section1),
                     getString(R.string.title_section2),
                     getString(R.string.title_section3),
-                    /*"Bubble Compass",*/
-                    "GPS Plot"
+                    "GPS Plot",
+                    "Marking"
             };
-            fragment=new Fragment[] {new org.kwansystems.sensorlog.GPSLogFragment(gpf),new SensorInfoFragment(),new SensorLogFragment(null)/*,bcf*/, gpf};
+            fragment=new Fragment[] {new org.kwansystems.sensorlog.GPSLogFragment(gpf),new SensorInfoFragment(),new SensorLogFragment(), gpf, new MarkFragment()};
         }
 
         @Override

@@ -9,11 +9,18 @@
         android:layout_height="wrap_content"
         android:columnCount="2"
         android:orientation="vertical"
-        android:rowCount="12" >
+        android:rowCount="16" >
 
         <ToggleButton
-            android:id="@+id/btnSensors"
+            android:id="@+id/btnLog"
             android:layout_column="0"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:text="ToggleButton" />
+
+        <ToggleButton
+            android:id="@+id/btnShow"
+            android:layout_column="1"
             android:layout_gravity="left|top"
             android:layout_row="0"
             android:text="ToggleButton" />
@@ -95,6 +102,37 @@
             android:text="BfldZ" />
 
         <TextView
+            android:id="@+id/txtQuat"
+            android:layout_column="0"
+            android:layout_gravity="left|top"
+            android:text="Quat" />
+
+        <TextView
+            android:id="@+id/txtQuatX"
+            android:layout_column="1"
+            android:layout_gravity="left|top"
+            android:layout_row="10"
+            android:text="QuatX" />
+
+        <TextView
+            android:id="@+id/txtQuatY"
+            android:layout_column="1"
+            android:layout_gravity="left|top"
+            android:text="QuatY" />
+
+        <TextView
+            android:id="@+id/txtQuatZ"
+            android:layout_column="1"
+            android:layout_gravity="left|top"
+            android:text="QuatZ" />
+
+        <TextView
+            android:id="@+id/txtQuatW"
+            android:layout_column="1"
+            android:layout_gravity="left|top"
+            android:text="QuatW" />
+
+        <TextView
             android:id="@+id/txtPres"
             android:layout_column="0"
             android:layout_gravity="left|top"
@@ -104,7 +142,7 @@
             android:id="@+id/txtPresX"
             android:layout_column="1"
             android:layout_gravity="left|top"
-            android:layout_row="10"
+            android:layout_row="14"
             android:text="PresX" />
 
     </GridLayout>

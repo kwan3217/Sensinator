@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ToggleButton
+            android:id="@+id/btnGPS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/togglebutton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <org.kwansystems.sensinator.GPSPlotView
+            android:id="@+id/gpsPlotView"
+            android:layout_width="wrap_content"
+            android:layout_height="350dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnGPS" />
+
+        <TextView
+            android:id="@+id/lblLatitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/latitude"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gpsPlotView" />
+
+        <TextView
+            android:id="@+id/txtLatitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/lblLongitude"
+            app:layout_constraintTop_toTopOf="@+id/lblLatitude" />
+
+        <TextView
+            android:id="@+id/lblLongitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Longitude"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblLatitude" />
+
+        <TextView
+            android:id="@+id/txtLongitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/lblLongitude"
+            app:layout_constraintTop_toTopOf="@+id/lblLongitude" />
+
+        <TextView
+            android:id="@+id/lblAltitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Altitude"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblLongitude" />
+
+        <TextView
+            android:id="@+id/txtAltitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/lblLongitude"
+            app:layout_constraintTop_toTopOf="@+id/lblAltitude" />
+
+        <TextView
+            android:id="@+id/txtSystemClock00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblAltitude" />
+
+        <TextView
+            android:id="@+id/txtNMEA00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock00"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock00" />
+
+        <TextView
+            android:id="@+id/txtSystemClock01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSystemClock00" />
+
+        <TextView
+            android:id="@+id/txtNMEA01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock01"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock01" />
+
+        <TextView
+            android:id="@+id/txtSystemClock02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSystemClock01" />
+
+        <TextView
+            android:id="@+id/txtNMEA02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock02"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock02" />
+
+        <TextView
+            android:id="@+id/txtSystemClock03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSystemClock02" />
+
+        <TextView
+            android:id="@+id/txtNMEA03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock03"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock03" />
+
+        <TextView
+            android:id="@+id/txtSystemClock04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSystemClock03" />
+
+        <TextView
+            android:id="@+id/txtNMEA04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock04"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock04" />
+
+        <TextView
+            android:id="@+id/txtSystemClock05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSystemClock04" />
+
+        <TextView
+            android:id="@+id/txtNMEA05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock05"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock05" />
+
+        <TextView
+            android:id="@+id/txtSystemClock06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSystemClock05" />
+
+        <TextView
+            android:id="@+id/txtNMEA06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock06"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock06" />
+
+        <TextView
+            android:id="@+id/txtSystemClock07"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSystemClock06" />
+
+        <TextView
+            android:id="@+id/txtNMEA07"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock07"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock07" />
+
+        <TextView
+            android:id="@+id/txtSystemClock08"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSystemClock07" />
+
+        <TextView
+            android:id="@+id/txtNMEA08"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock08"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock08" />
+
+        <TextView
+            android:id="@+id/txtSystemClock09"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSystemClock08" />
+
+        <TextView
+            android:id="@+id/txtNMEA09"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock09"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock09" />
+
+        <TextView
+            android:id="@+id/txtSystemClock10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSystemClock09" />
+
+        <TextView
+            android:id="@+id/txtNMEA10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock10"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock10" />
+
+        <TextView
+            android:id="@+id/txtSystemClock11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSystemClock10" />
+
+        <TextView
+            android:id="@+id/txtNMEA11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock11"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock11" />
+
+        <TextView
+            android:id="@+id/txtSystemClock12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSystemClock11" />
+
+        <TextView
+            android:id="@+id/txtNMEA12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock12"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock12" />
+
+        <TextView
+            android:id="@+id/txtSystemClock13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSystemClock12" />
+
+        <TextView
+            android:id="@+id/txtNMEA13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock13"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock13" />
+
+        <TextView
+            android:id="@+id/txtSystemClock14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSystemClock13" />
+
+        <TextView
+            android:id="@+id/txtNMEA14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock14"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock14" />
+
+        <TextView
+            android:id="@+id/txtSystemClock15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSystemClock14" />
+
+        <TextView
+            android:id="@+id/txtNMEA15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock15"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock15" />
+
+        <TextView
+            android:id="@+id/txtSystemClock16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSystemClock15" />
+
+        <TextView
+            android:id="@+id/txtNMEA16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock16"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock16" />
+
+        <TextView
+            android:id="@+id/txtSystemClock17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSystemClock16" />
+
+        <TextView
+            android:id="@+id/txtNMEA17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock17"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock17" />
+
+        <TextView
+            android:id="@+id/txtSystemClock18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSystemClock17" />
+
+        <TextView
+            android:id="@+id/txtNMEA18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock18"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock18" />
+
+        <TextView
+            android:id="@+id/txtSystemClock19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSystemClock18" />
+
+        <TextView
+            android:id="@+id/txtNMEA19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/txtSystemClock19"
+            app:layout_constraintTop_toTopOf="@+id/txtSystemClock19" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

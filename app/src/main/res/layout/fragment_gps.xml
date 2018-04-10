@@ -77,7 +77,10 @@
             android:id="@+id/txtSystemClock00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lblAltitude" />
 
@@ -85,7 +88,10 @@
             android:id="@+id/txtNMEA00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock00"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock00" />
 
@@ -93,7 +99,10 @@
             android:id="@+id/txtSystemClock01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSystemClock00" />
 
@@ -101,7 +110,10 @@
             android:id="@+id/txtNMEA01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock01"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock01" />
 
@@ -109,7 +121,10 @@
             android:id="@+id/txtSystemClock02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSystemClock01" />
 
@@ -117,7 +132,10 @@
             android:id="@+id/txtNMEA02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock02"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock02" />
 
@@ -125,7 +143,10 @@
             android:id="@+id/txtSystemClock03"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSystemClock02" />
 
@@ -133,7 +154,10 @@
             android:id="@+id/txtNMEA03"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock03"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock03" />
 
@@ -141,7 +165,10 @@
             android:id="@+id/txtSystemClock04"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSystemClock03" />
 
@@ -149,7 +176,10 @@
             android:id="@+id/txtNMEA04"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock04"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock04" />
 
@@ -157,7 +187,10 @@
             android:id="@+id/txtSystemClock05"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSystemClock04" />
 
@@ -165,7 +198,10 @@
             android:id="@+id/txtNMEA05"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock05"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock05" />
 
@@ -173,7 +209,10 @@
             android:id="@+id/txtSystemClock06"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSystemClock05" />
 
@@ -181,7 +220,10 @@
             android:id="@+id/txtNMEA06"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock06"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock06" />
 
@@ -189,7 +231,10 @@
             android:id="@+id/txtSystemClock07"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSystemClock06" />
 
@@ -197,7 +242,10 @@
             android:id="@+id/txtNMEA07"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock07"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock07" />
 
@@ -205,7 +253,10 @@
             android:id="@+id/txtSystemClock08"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSystemClock07" />
 
@@ -213,7 +264,10 @@
             android:id="@+id/txtNMEA08"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock08"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock08" />
 
@@ -221,7 +275,10 @@
             android:id="@+id/txtSystemClock09"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSystemClock08" />
 
@@ -229,7 +286,10 @@
             android:id="@+id/txtNMEA09"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock09"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock09" />
 
@@ -237,7 +297,10 @@
             android:id="@+id/txtSystemClock10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSystemClock09" />
 
@@ -245,7 +308,10 @@
             android:id="@+id/txtNMEA10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock10"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock10" />
 
@@ -253,7 +319,10 @@
             android:id="@+id/txtSystemClock11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSystemClock10" />
 
@@ -261,7 +330,10 @@
             android:id="@+id/txtNMEA11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock11"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock11" />
 
@@ -269,7 +341,10 @@
             android:id="@+id/txtSystemClock12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSystemClock11" />
 
@@ -277,7 +352,10 @@
             android:id="@+id/txtNMEA12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock12"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock12" />
 
@@ -285,7 +363,10 @@
             android:id="@+id/txtSystemClock13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSystemClock12" />
 
@@ -293,7 +374,10 @@
             android:id="@+id/txtNMEA13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock13"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock13" />
 
@@ -301,7 +385,10 @@
             android:id="@+id/txtSystemClock14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSystemClock13" />
 
@@ -309,7 +396,10 @@
             android:id="@+id/txtNMEA14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock14"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock14" />
 
@@ -317,7 +407,10 @@
             android:id="@+id/txtSystemClock15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSystemClock14" />
 
@@ -325,7 +418,10 @@
             android:id="@+id/txtNMEA15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock15"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock15" />
 
@@ -333,7 +429,10 @@
             android:id="@+id/txtSystemClock16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSystemClock15" />
 
@@ -341,7 +440,10 @@
             android:id="@+id/txtNMEA16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock16"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock16" />
 
@@ -349,7 +451,10 @@
             android:id="@+id/txtSystemClock17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSystemClock16" />
 
@@ -357,7 +462,10 @@
             android:id="@+id/txtNMEA17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock17"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock17" />
 
@@ -365,7 +473,10 @@
             android:id="@+id/txtSystemClock18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSystemClock17" />
 
@@ -373,7 +484,10 @@
             android:id="@+id/txtNMEA18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock18"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock18" />
 
@@ -381,7 +495,10 @@
             android:id="@+id/txtSystemClock19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSystemClock18" />
 
@@ -389,7 +506,10 @@
             android:id="@+id/txtNMEA19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:text="TextView"
+            android:textSize="8sp"
+            app:fontFamily="monospace"
             app:layout_constraintStart_toEndOf="@+id/txtSystemClock19"
             app:layout_constraintTop_toTopOf="@+id/txtSystemClock19" />
 

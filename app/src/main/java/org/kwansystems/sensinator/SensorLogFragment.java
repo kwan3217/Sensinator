@@ -15,15 +15,59 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
+import java.util.List;
+
 public class SensorLogFragment extends Fragment implements SensorEventListener {
     private SensorManager mSensorManager;
     private TextView txtAcc[]=new TextView[3];
     private TextView txtBfld[]=new TextView[3];
     private TextView txtGyro[]=new TextView[3];
-    private TextView txtQuat[]=new TextView[4];
+    private TextView txtQuat[]=new TextView[3];
     private TextView txtPres[]=new TextView[1];
     private ToggleButton btnShow;
+    private TextView txtSensorInfo;
     Sensor acc,bfld,gyro,quat,pres;
+    final String[] typeName=new String[] {
+            /* 0*/"",
+            /* 1*/"Accelerometer",
+            /* 2*/"Magnetic Field",
+            /* 3*/"Orientation*",
+            /* 4*/"Gyroscope",
+            /* 5*/"Light",
+            /* 6*/"Pressure",
+            /* 7*/"Temperature*",
+            /* 8*/"Proximity",
+            /* 9*/"Gravity",
+            /*10*/"Linear Acceleration",
+            /*11*/"Rotation Vector",
+            /*12*/"Relative Humidity",
+            /*13*/"Ambient Temperature",
+            /*14*/"Magnetic Field Uncalibrated",
+            /*15*/"Game Rotation Vector",
+            /*16*/"Gyroscope Uncalibrated",
+            /*17*/"Significant Motion"
+    };
+    final String[] unitName=new String[] {
+            /* 0*/"",
+            /* 1*/"m/s^2",
+            /* 2*/"\u03bcT",
+            /* 3*/"\u00b0",
+            /* 4*/"rad/s",
+            /* 5*/"lux",
+            /* 6*/"hPa",
+            /* 7*/"\u00b0C",
+            /* 8*/"cm",
+            /* 9*/"m/s^2",
+            /*10*/"m/s^2",
+            /*11*/"",
+            /*12*/"%",
+            /*13*/"\u00b0C",
+            /*14*/"\u03bcT",
+            /*15*/"",
+            /*16*/"rad/s",
+            /*17*/"" //significant motion
+    };
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_sensor_log, container, false);
@@ -40,8 +84,8 @@ public class SensorLogFragment extends Fragment implements SensorEventListener {
         txtQuat[0]=(TextView)rootView.findViewById(R.id.txtQuatX);
         txtQuat[1]=(TextView)rootView.findViewById(R.id.txtQuatY);
         txtQuat[2]=(TextView)rootView.findViewById(R.id.txtQuatZ);
-        txtQuat[3]=(TextView)rootView.findViewById(R.id.txtQuatW);
         txtPres[0]=(TextView)rootView.findViewById(R.id.txtPresX);
+        txtSensorInfo=(TextView)rootView.findViewById(R.id.txtSensorInfo);
         btnShow.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton btnGPS, boolean isChecked) {
                 if (isChecked) {
@@ -61,6 +105,14 @@ public class SensorLogFragment extends Fragment implements SensorEventListener {
         gyro = mSensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
         quat = mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
         pres = mSensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE);
+        List<Sensor> sensors=mSensorManager.getSensorList(Sensor.TYPE_ALL);
+        String s="";
+        int i=0;
+        for(Sensor I:sensors) {
+            s=s+String.format("%d %s\n",i,I.toString());
+            i++;
+        }
+        txtSensorInfo.setText(s);
         return rootView;
     }
 

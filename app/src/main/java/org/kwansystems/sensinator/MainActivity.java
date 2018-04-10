@@ -195,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
         Fragment fragment[];
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
-            fragment=new Fragment[] {new ControlFragment(), new GPSFragment(),new SensorInfoFragment(),new SensorLogFragment()};
+            fragment=new Fragment[] {new ControlFragment(), new GPSFragment(),new SensorLogFragment()};
         }
 
         @Override

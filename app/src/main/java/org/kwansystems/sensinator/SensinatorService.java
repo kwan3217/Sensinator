@@ -30,7 +30,7 @@ public class SensinatorService extends Service implements NmeaListener, Location
     private String oldContentText=null;
     private SensorManager mSensorManager;
     private Sensor acc, bfld, gyro, pres, ornt;
-    private String prefix=null;
+    private String prefix=null,oufnNMEA=null,oufnSensor=null;
     @Override
     public void onCreate() {
       folder=new File(new File(Environment.getExternalStorageDirectory().getPath()), "SensorLogs");
@@ -170,9 +170,10 @@ public class SensinatorService extends Service implements NmeaListener, Location
         if(oufNMEA==null) try {
             Toast.makeText(this, "openNMEA", Toast.LENGTH_SHORT).show();
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
-            String oufn="NMEA"+ sdfIso.format(new Date()) + ".txt";
-            if(prefix!=null)oufn=prefix+oufn;
-            oufNMEA = new PrintWriter(new FileWriter(new File(folder,oufn)));
+            oufnNMEA="NMEA"+ sdfIso.format(new Date()) + ".txt";
+            if(prefix!=null)oufnNMEA=prefix+oufnNMEA;
+            mark("Opening NMEA: "+oufnNMEA);
+            oufNMEA = new PrintWriter(new FileWriter(new File(folder,oufnNMEA)));
             nmeaStartTime = new Date();
             setForegroundState(true);
         } catch (IOException e) {
@@ -181,12 +182,16 @@ public class SensinatorService extends Service implements NmeaListener, Location
     }
 
     public void closeNMEA() {
-        Toast.makeText(this, "closeNMEA", Toast.LENGTH_SHORT).show();
-        locationManager.removeUpdates(this);
-        oufNMEA.close();
-        oufNMEA=null;
-        nmeaStartTime=null;
-        setForegroundState(oufSensor!=null);
+        if(oufNMEA!=null) {
+            Toast.makeText(this, "closeNMEA", Toast.LENGTH_SHORT).show();
+            locationManager.removeUpdates(this);
+            oufNMEA.close();
+            oufNMEA = null;
+            mark("Closing NMEA: " + oufnNMEA);
+            oufnNMEA = null;
+            nmeaStartTime = null;
+            setForegroundState(oufSensor != null);
+        }
     }
 
     public boolean isNMEAOpen() {
@@ -201,9 +206,10 @@ public class SensinatorService extends Service implements NmeaListener, Location
             mSensorManager.registerListener(this, gyro, SensorManager.SENSOR_DELAY_FASTEST);
             mSensorManager.registerListener(this, pres, SensorManager.SENSOR_DELAY_FASTEST);
             mSensorManager.registerListener(this, ornt, SensorManager.SENSOR_DELAY_FASTEST);
-            String oufn="Sensor"+ sdfIso.format(new Date()) + ".csv";
-            if(prefix!=null)oufn=prefix+oufn;
-            oufSensor = new PrintWriter(new FileWriter(new File(folder,oufn)));
+            oufnSensor="Sensor"+ sdfIso.format(new Date()) + ".csv";
+            if(prefix!=null)oufnSensor=prefix+oufnSensor;
+            mark("Opening Sensor: "+oufnSensor);
+            oufSensor = new PrintWriter(new FileWriter(new File(folder,oufnSensor)));
             sensorStartTime=new Date();
             setForegroundState(true);
         } catch (IOException e) {
@@ -217,6 +223,8 @@ public class SensinatorService extends Service implements NmeaListener, Location
             Toast.makeText(this, "closeSensor", Toast.LENGTH_SHORT).show();
             oufSensor.close();
             oufSensor = null;
+            mark("Closing Sensor: " + oufnSensor);
+            oufnSensor = null;
             sensorStartTime = null;
             setForegroundState(oufNMEA!=null);
         }

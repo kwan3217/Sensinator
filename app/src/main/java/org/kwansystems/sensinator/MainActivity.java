@@ -30,6 +30,7 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
@@ -51,32 +52,28 @@ public class MainActivity extends AppCompatActivity {
      */
     private ViewPager mViewPager;
 
+    public boolean getPermissions(String[] permissions) {
+        ArrayList<String> requestingPermissions=new ArrayList<String>();
+        for(String permission:permissions) {
+            if (ContextCompat.checkSelfPermission(this,permission) != PackageManager.PERMISSION_GRANTED) {
+                requestingPermissions.add(permission);
+                // Permission is not yet granted, request the permission
+                ActivityCompat.requestPermissions(this, new String[]{permission},
+                        0);
+            }
+        }
+        if(requestingPermissions.isEmpty()) {
+            return true;
+        } else {
+            ActivityCompat.requestPermissions(this, requestingPermissions.toArray(new String[]{}),0);
+            return false;
+        }
+    }
     public boolean getPermissions() {
-        // Here, thisActivity is the current activity
-        boolean result=true;
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-
-            // Permission is not yet granted, request the permission
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                    0);
-
-            result=false;
-        }
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED) {
-
-            // Permission is not yet granted, request the permission
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                    1);
-
-            result=false;
-        }
-        return result;
+        return getPermissions(new String[] {
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.ACCESS_FINE_LOCATION
+        });
     }
 
     @Override
@@ -195,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
         Fragment fragment[];
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
-            fragment=new Fragment[] {new ControlFragment(), new GPSFragment(),new SensorLogFragment()};
+            fragment=new Fragment[] {new ControlFragment(), new GPSFragment(),new SensorFragment()};
         }
 
         @Override
@@ -226,4 +223,5 @@ public class MainActivity extends AppCompatActivity {
         public void onServiceDisconnected(ComponentName arg0) {
             mBound = false;
         }
-    };}
+    };
+}

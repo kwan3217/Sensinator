@@ -17,7 +17,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import java.util.List;
 
-public class SensorLogFragment extends Fragment implements SensorEventListener {
+public class SensorFragment extends Fragment implements SensorEventListener {
     private SensorManager mSensorManager;
     private TextView txtAcc[]=new TextView[3];
     private TextView txtBfld[]=new TextView[3];
@@ -70,32 +70,32 @@ public class SensorLogFragment extends Fragment implements SensorEventListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_sensor_log, container, false);
-        btnShow=(ToggleButton)rootView.findViewById(R.id.btnShow);
-        txtAcc[0]=(TextView)rootView.findViewById(R.id.txtAccX);
-        txtAcc[1]=(TextView)rootView.findViewById(R.id.txtAccY);
-        txtAcc[2]=(TextView)rootView.findViewById(R.id.txtAccZ);
-        txtBfld[0]=(TextView)rootView.findViewById(R.id.txtBfldX);
-        txtBfld[1]=(TextView)rootView.findViewById(R.id.txtBfldY);
-        txtBfld[2]=(TextView)rootView.findViewById(R.id.txtBfldZ);
-        txtGyro[0]=(TextView)rootView.findViewById(R.id.txtGyroX);
-        txtGyro[1]=(TextView)rootView.findViewById(R.id.txtGyroY);
-        txtGyro[2]=(TextView)rootView.findViewById(R.id.txtGyroZ);
-        txtQuat[0]=(TextView)rootView.findViewById(R.id.txtQuatX);
-        txtQuat[1]=(TextView)rootView.findViewById(R.id.txtQuatY);
-        txtQuat[2]=(TextView)rootView.findViewById(R.id.txtQuatZ);
-        txtPres[0]=(TextView)rootView.findViewById(R.id.txtPresX);
-        txtSensorInfo=(TextView)rootView.findViewById(R.id.txtSensorInfo);
+        View rootView = inflater.inflate(R.layout.fragment_sensor, container, false);
+        btnShow=rootView.findViewById(R.id.btnShow);
+        txtAcc[0]=rootView.findViewById(R.id.txtAccX);
+        txtAcc[1]=rootView.findViewById(R.id.txtAccY);
+        txtAcc[2]=rootView.findViewById(R.id.txtAccZ);
+        txtBfld[0]=rootView.findViewById(R.id.txtBfldX);
+        txtBfld[1]=rootView.findViewById(R.id.txtBfldY);
+        txtBfld[2]=rootView.findViewById(R.id.txtBfldZ);
+        txtGyro[0]=rootView.findViewById(R.id.txtGyroX);
+        txtGyro[1]=rootView.findViewById(R.id.txtGyroY);
+        txtGyro[2]=rootView.findViewById(R.id.txtGyroZ);
+        txtQuat[0]=rootView.findViewById(R.id.txtQuatX);
+        txtQuat[1]=rootView.findViewById(R.id.txtQuatY);
+        txtQuat[2]=rootView.findViewById(R.id.txtQuatZ);
+        txtPres[0]=rootView.findViewById(R.id.txtPresX);
+        txtSensorInfo=rootView.findViewById(R.id.txtSensorInfo);
         btnShow.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton btnGPS, boolean isChecked) {
                 if (isChecked) {
-                    mSensorManager.registerListener(SensorLogFragment.this, acc, SensorManager.SENSOR_DELAY_NORMAL);
-                    mSensorManager.registerListener(SensorLogFragment.this, bfld, SensorManager.SENSOR_DELAY_NORMAL);
-                    mSensorManager.registerListener(SensorLogFragment.this, gyro, SensorManager.SENSOR_DELAY_NORMAL);
-                    mSensorManager.registerListener(SensorLogFragment.this, quat, SensorManager.SENSOR_DELAY_NORMAL);
-                    mSensorManager.registerListener(SensorLogFragment.this, pres, SensorManager.SENSOR_DELAY_NORMAL);
+                    mSensorManager.registerListener(SensorFragment.this, acc, SensorManager.SENSOR_DELAY_NORMAL);
+                    mSensorManager.registerListener(SensorFragment.this, bfld, SensorManager.SENSOR_DELAY_NORMAL);
+                    mSensorManager.registerListener(SensorFragment.this, gyro, SensorManager.SENSOR_DELAY_NORMAL);
+                    mSensorManager.registerListener(SensorFragment.this, quat, SensorManager.SENSOR_DELAY_NORMAL);
+                    mSensorManager.registerListener(SensorFragment.this, pres, SensorManager.SENSOR_DELAY_NORMAL);
                 } else {
-                    mSensorManager.unregisterListener(SensorLogFragment.this);
+                    mSensorManager.unregisterListener(SensorFragment.this);
                 }
             }
         });
@@ -116,10 +116,7 @@ public class SensorLogFragment extends Fragment implements SensorEventListener {
         return rootView;
     }
 
-    @Override
-    public void onAccuracyChanged(Sensor arg0, int arg1) {
-        // TODO Auto-generated method stub
-    }
+    @Override public void onAccuracyChanged(Sensor arg0, int arg1) { }
     @Override
     public void onSensorChanged(SensorEvent arg0) {
         TextView[] txtSens=null;

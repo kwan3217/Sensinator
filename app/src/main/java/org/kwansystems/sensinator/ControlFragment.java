@@ -23,7 +23,7 @@ public class ControlFragment extends Fragment {
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_mark, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_control, container, false);
         btnMark=rootView.findViewById(R.id.btnMark);
         btnStart=rootView.findViewById(R.id.btnStart);
         btnFinish=rootView.findViewById(R.id.btnFinish);
@@ -82,7 +82,7 @@ public class ControlFragment extends Fragment {
         txtPrefix.addTextChangedListener(new TextWatcher() {
             @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
             @Override public void afterTextChanged(Editable s) { }
-            @Override public void onTextChanged(CharSequence s, int start, int before, int count) { MainActivity.mService.setPrefix(s.toString()); }
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) { if(MainActivity.mService!=null)MainActivity.mService.setPrefix(s.toString()); }
 
         });
         return rootView;

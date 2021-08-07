@@ -15,12 +15,13 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.location.*;
-import android.location.GpsStatus.NmeaListener;
 import android.os.*;
-import android.support.v4.app.NotificationCompat;
+import androidx.annotation.RequiresApi;
+import androidx.core.app.NotificationCompat;
 import android.widget.*;
 
-public class SensinatorService extends Service implements NmeaListener, LocationListener, SensorEventListener {
+@RequiresApi(api = Build.VERSION_CODES.N)
+public class SensinatorService extends Service implements OnNmeaMessageListener, LocationListener, SensorEventListener {
     private static SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss.SSS");
     public static SimpleDateFormat sdfIso = new SimpleDateFormat("yyyyMMdd'T'HHmmss");
     private NotificationManager nm;
@@ -141,6 +142,7 @@ public class SensinatorService extends Service implements NmeaListener, Location
     // Binder given to clients
     private final IBinder mBinder = new LocalBinder();
 
+
     /**
      * Class used for the client Binder. Because we know this service always runs
      * in the same process as its clients, we don't need to deal with IPC.
@@ -239,7 +241,8 @@ public class SensinatorService extends Service implements NmeaListener, Location
     }
 
     /* Listeners */
-    public void onNmeaReceived(long timestamp, String Data) {
+    @Override
+    public void onNmeaMessage(String Data, long timestamp) {
         showNotification();
         if(oufNMEA==null) return;
         String ts = sdf.format(new Date(timestamp));
@@ -264,4 +267,5 @@ public class SensinatorService extends Service implements NmeaListener, Location
             showNotification();
         }
     }
+
 }

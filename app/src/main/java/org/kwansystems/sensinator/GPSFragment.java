@@ -8,9 +8,11 @@ import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.location.GpsStatus.NmeaListener;
+import android.location.OnNmeaMessageListener;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.annotation.RequiresApi;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +21,8 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
-public class GPSFragment extends Fragment implements NmeaListener,LocationListener {
+@RequiresApi(api = Build.VERSION_CODES.N)
+public class GPSFragment extends Fragment implements OnNmeaMessageListener,LocationListener {
     TextView[] txtSystemClock,txtNMEA;
     ToggleButton btnGPS;
     SimpleDateFormat sdf=new SimpleDateFormat("hh:mm:ss.SSS");
@@ -118,19 +121,19 @@ public class GPSFragment extends Fragment implements NmeaListener,LocationListen
     @Override public void onStatusChanged(String provider, int status,Bundle extras) {}
 
     @Override
-    public void onNmeaReceived(long timestamp, String Data) {
+    public void onNmeaMessage(String Data, long timestamp) {
         String[] NMEAs=Data.split("\\r?\\n");
         for(String NMEA:NMEAs) {
             if(gpsPlotView!=null) gpsPlotView.onNmeaReceived(timestamp, NMEA);
             String[] p=NMEA.split(",");
-            if(p[0].equals("$GPRMC")) {
+            if(p[0].substring(3).equals("RMC")) {
                 if(txtLatitude !=null)txtLatitude .setText(p[3]+","+p[4]);
                 if(txtLongitude!=null)txtLongitude.setText(p[5]+","+p[6]);
-            } else if(p[0].equals("$GPGGA")) {
+            } else if(p[0].substring(3).equals("GGA")) {
                 if(txtAltitude!=null)txtAltitude.setText(p[9]);
             }
             String type = NMEA.substring(1, 6);
-            if (type.equals("GPGSV") || type.equals("GLGSV")) type = NMEA.substring(1, 10);
+            if (type.substring(2).equals("GSV")) type = NMEA.substring(1, 10);
             int i = l.indexOf(type);
             if (i < 0) {
                 l.add(type);

@@ -6,7 +6,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -85,7 +85,7 @@ public class SensorFragment extends Fragment implements SensorEventListener {
         txtQuat[1]=rootView.findViewById(R.id.txtQuatY);
         txtQuat[2]=rootView.findViewById(R.id.txtQuatZ);
         txtPres[0]=rootView.findViewById(R.id.txtPresX);
-        txtSensorInfo=rootView.findViewById(R.id.txtSensorInfo);
+        txtSensorInfo=rootView.findViewById(R.id.txtSerialInfo);
         btnShow.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton btnGPS, boolean isChecked) {
                 if (isChecked) {

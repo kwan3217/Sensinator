@@ -11,7 +11,7 @@ public class GPSPlotView extends View implements NmeaListener {
     private Paint paint=new Paint();
     private int mWidth;
     private int mHeight;
-    private int[] az=new int[299];
+    private int[] az=new int[399];
     private int[] el=new int[az.length];
     private int[] str=new int[el.length];
     public GPSPlotView(Context context) {
@@ -47,7 +47,13 @@ public class GPSPlotView extends View implements NmeaListener {
             canvas.drawCircle(mWidth/2, mHeight/2, size*0.4f, paint);
             paint.setTextSize(20);
             for(int prn=0;prn<az.length;prn++) if(az[prn]>0) {
-                if(prn<100) paint.setARGB(255,0,str[prn]*255/40,255); else paint.setARGB(255,255,str[prn]*255/40,0);
+                if(prn<100) {
+                    paint.setARGB(255,0,str[prn]*255/40,255);
+                } else if(prn<200) {
+                    paint.setARGB(255,255,str[prn]*255/40,0);
+                } else {
+                    paint.setARGB(255,0,255,str[prn]*255/40);
+                }
                 double s=Math.sin(az[prn]*Math.PI/180.0);
                 double c=Math.cos(az[prn]*Math.PI/180.0);
                 double r=(90-el[prn])*size*0.4f/90;
@@ -66,7 +72,21 @@ public class GPSPlotView extends View implements NmeaListener {
     public void onNmeaReceived(long timestamp, String nmea) {
         String[] p=nmea.split(",");
         if(p[0].substring(3).equals("GSV")) {
-            int prnOffset=p[0].equals("$GPGSV")?0:100;
+            int prnOffset;
+            switch(p[0].charAt(2)) {
+                case 'P':
+                    prnOffset=0;
+                    break;
+                case 'N':
+                    prnOffset=100;
+                    break;
+                case 'A':
+                    prnOffset=200;
+                    break;
+                default:
+                    prnOffset=300;
+
+            }
 //            Log.d("GPSPlotView",nmea);
 //            Log.d("GPSPlotView","N parts: "+Integer.toString(p.length));
 //            Log.d("GPSPlotView","p[0]: "+p[0]);
